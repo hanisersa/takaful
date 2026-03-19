@@ -104,8 +104,8 @@ export default function ProfilePage() {
             </div>
 
             {/* Stats Row */}
-            <div style={{
-              display: 'flex', gap: '0', marginTop: '24px',
+            <div className="stats-row-responsive" style={{
+              gap: '0', marginTop: '24px',
               background: '#f9fafb', borderRadius: '16px', overflow: 'hidden', border: '1px solid #f3f4f6',
             }}>
               {[
@@ -155,7 +155,7 @@ export default function ProfilePage() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }}>
 
           {activeTab === 'about' && (
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
+            <div className="grid-2fr-1fr" style={{ gap: '24px' }}>
               {/* Left */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                 {/* Bio */}

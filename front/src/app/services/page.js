@@ -412,7 +412,7 @@ export default function ServicesPage() {
         ) : filteredServices.length > 0 ? (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: viewMode === 'grid' ? 'repeat(auto-fill, minmax(340px, 1fr))' : '1fr',
+            gridTemplateColumns: viewMode === 'grid' ? 'repeat(auto-fill, minmax(min(340px, 100%), 1fr))' : '1fr',
             gap: '20px',
           }}>
             {filteredServices.map((service) => (

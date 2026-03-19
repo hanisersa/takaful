@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import { findUserById, safeUser } from '@/models/User';
 import { verifyToken } from '@/lib/auth';
 
+// Force Node.js runtime (required for mongoose/bcryptjs on Vercel)
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 export async function GET(request) {
   try {
     const authHeader = request.headers.get('authorization');

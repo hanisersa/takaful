@@ -19,11 +19,8 @@ const transactionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Delete stale cached model so schema changes (like requesterConfirmed/providerConfirmed) are picked up
-if (mongoose.models.Transaction) {
-  delete mongoose.models.Transaction;
-}
-const Transaction = mongoose.model('Transaction', transactionSchema);
+// Use serverless-safe model caching pattern
+const Transaction = mongoose.models.Transaction || mongoose.model('Transaction', transactionSchema);
 
 // --- Helper functions ---
 

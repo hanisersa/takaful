@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || "hackin_expedition_jwt_secret_2026";
 
 export function signToken(userId) {
   return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '30d' });

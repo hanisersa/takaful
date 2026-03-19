@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import { findUser, createUser, hashPassword, safeUser } from '@/models/User';
 import { signToken } from '@/lib/auth';
 
+// Force Node.js runtime (required for mongoose/bcryptjs on Vercel)
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 export async function POST(request) {
   try {
     const body = await request.json();

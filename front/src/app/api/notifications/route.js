@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { getAuthUser, unauthorized } from '@/lib/apiAuth';
 import { findNotificationsByUser, markAllNotificationsRead, countUnreadNotifications } from '@/models/Notification';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // GET /api/notifications — get current user's notifications
 export async function GET(request) {
   try {

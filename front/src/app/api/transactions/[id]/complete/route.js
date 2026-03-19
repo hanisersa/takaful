@@ -5,6 +5,9 @@ import { findUserById, updateUser } from '@/models/User';
 import mongoose from 'mongoose';
 import dbConnect from '@/lib/mongodb';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // PATCH /api/transactions/:id/complete — confirm job done (two-way confirmation)
 // Uses raw MongoDB operations to guarantee requesterConfirmed/providerConfirmed persist
 export async function PATCH(request, { params }) {

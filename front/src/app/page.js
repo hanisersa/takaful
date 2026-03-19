@@ -167,7 +167,7 @@ export default function HomePage() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '80px', position: 'relative', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', gap: '80px', position: 'relative', flexWrap: 'wrap' }} className="steps-row">
               <div className="hidden md:block" style={{ position: 'absolute', top: '40px', left: '80px', right: '80px', height: '3px', background: 'linear-gradient(90deg, #a7f3d0, #10b981, #a7f3d0)', borderRadius: '4px', zIndex: 0 }} />
               {[
                 { step: '01', icon: Heart, title: 'Offer Your Skills', desc: 'Sign up and list the services you can provide — whether it\'s medical care, teaching, repairs, or anything your community needs.', color: 'from-emerald-500 to-teal-600' },
@@ -201,7 +201,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          <div className="grid-cols-3-responsive" style={{ gap: '16px' }}>
             {serviceCategories.map((cat) => (
               <div key={cat.name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'white', borderRadius: '16px', padding: '28px 16px', border: '1px solid #f3f4f6', transition: 'all 0.2s' }}>
                 <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: cat.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
@@ -228,7 +228,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+          <div className="grid-cols-3-responsive" style={{ gap: '20px' }}>
             {exampleServices.map((service) => (
               <div key={service.title} style={{ display: 'flex', alignItems: 'center', gap: '16px', background: '#f9fafb', borderRadius: '16px', padding: '20px', border: '1px solid #f3f4f6', transition: 'all 0.2s' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: service.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -276,7 +276,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', maxWidth: '900px', margin: '0 auto' }}>
+          <div className="grid-cols-3-responsive" style={{ gap: '24px', maxWidth: '900px', margin: '0 auto' }}>
             {[
               { icon: Shield, title: 'Trusted Community', desc: 'Every member is verified. Rate and review after each service exchange.' },
               { icon: Coins, title: 'No Money Needed', desc: 'Exchange skills using points. Help someone, earn points, get help back.' },

@@ -89,7 +89,7 @@ export default function SettingsPage() {
           </div>
         )}
 
-        <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: '24px' }}>
+        <div className="grid-sidebar-240" style={{ gap: '24px' }}>
 
           {/* Sidebar Nav */}
           <div style={{
@@ -147,7 +147,7 @@ export default function SettingsPage() {
                   </div>
 
                   {/* Form Fields */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="grid-cols-2-responsive" style={{ gap: '16px' }}>
                     {[
                       { label: 'First Name', key: 'firstName', icon: User, full: false },
                       { label: 'Last Name', key: 'lastName', icon: User, full: false },
@@ -230,7 +230,7 @@ export default function SettingsPage() {
                       }} />
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="grid-cols-2-responsive" style={{ gap: '16px' }}>
                     <div>
                       <label style={{ fontSize: '12px', fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: '6px' }}>New Password</label>
                       <div style={{ position: 'relative' }}>

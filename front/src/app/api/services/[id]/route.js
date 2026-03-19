@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { findServiceById } from '@/models/Service';
 import mongoose from 'mongoose';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // GET /api/services/:id — get single service details
 export async function GET(request, { params }) {
   try {

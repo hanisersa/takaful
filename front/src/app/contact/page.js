@@ -36,7 +36,7 @@ export default function ContactPage() {
       {/* ===================== CONTENT ===================== */}
       <section style={{ padding: '80px 0', background: 'white' }}>
         <div className="container-custom">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
+          <div className="grid-cols-2-responsive" style={{ gap: '64px' }}>
             {/* Form */}
             <div>
               <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#111827', marginBottom: '8px' }}>

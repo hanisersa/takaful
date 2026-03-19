@@ -167,7 +167,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Stats Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
+        <div className="grid-cols-4-responsive" style={{ gap: '16px', marginBottom: '32px' }}>
           {/* Points Card */}
           <div style={{
             gridColumn: 'span 2',
@@ -238,7 +238,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Content Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
+        <div className="grid-2fr-1fr" style={{ gap: '24px' }}>
           {/* Main */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* Transactions */}
@@ -286,7 +286,7 @@ export default function DashboardPage() {
                 <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#111827', margin: 0 }}>Achievements</h2>
                 <span style={{ fontSize: '12px', color: '#d1d5db' }}>{computedAchievements.filter(a => a.completed).length} of {computedAchievements.length} unlocked</span>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px', padding: '20px 24px' }}>
+              <div className="grid-cols-3-responsive" style={{ gap: '14px', padding: '20px 24px' }}>
                 {computedAchievements.map((a) => (
                   <div key={a.name} style={{
                     borderRadius: '14px', padding: '16px', textAlign: 'center',

@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { getAuthUser, unauthorized } from '@/lib/apiAuth';
 import { createService, findServices } from '@/models/Service';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // GET /api/services — list all available services
 export async function GET(request) {
   try {

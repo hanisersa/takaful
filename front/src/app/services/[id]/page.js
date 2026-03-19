@@ -569,7 +569,7 @@ export default function ServiceDetailPage() {
         </div>
 
         {/* Main Grid: 2 columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '24px', alignItems: 'start' }}>
+        <div className="grid-1fr-380" style={{ gap: '24px', alignItems: 'start' }}>
 
           {/* Left Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -1213,15 +1213,6 @@ export default function ServiceDetailPage() {
         )}
 
       </div>
-
-      {/* Responsive styling */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          div[style*="grid-template-columns: 1fr 380px"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </div>
   );
 }

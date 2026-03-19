@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-shadow">
               <Heart className="w-5 h-5 text-white" fill="white" />
             </div>
@@ -54,7 +54,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="desktop-nav" style={{ alignItems: 'center', gap: '8px' }}>
             {navLinks.map((link) => (
               <div
                 key={link.name}
@@ -129,7 +129,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Side */}
-          <div className="hidden lg:flex" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className="desktop-nav" style={{ alignItems: 'center', gap: '12px' }}>
             {isLoggedIn ? (
               <>
                 {/* Points badge */}
@@ -313,7 +313,8 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="mobile-menu-btn"
+            style={{ padding: '8px', borderRadius: '8px', border: 'none', background: 'transparent', cursor: 'pointer' }}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -321,25 +322,36 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-100 animate-fade-in">
-            <div className="flex flex-col gap-1">
+          <div className="mobile-menu" style={{ paddingTop: '16px', paddingBottom: '16px', borderTop: '1px solid #f3f4f6' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+                    style={{
+                      display: 'block', padding: '12px 16px', fontSize: '14px', fontWeight: 500,
+                      color: '#4b5563', textDecoration: 'none', borderRadius: '8px',
+                      transition: 'all 0.2s',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = '#ecfdf5'; e.currentTarget.style.color = '#059669'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#4b5563'; }}
                   >
                     {link.name}
                   </Link>
                   {link.children && (
-                    <div className="ml-4">
+                    <div style={{ marginLeft: '16px' }}>
                       {link.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
                           onClick={() => setIsOpen(false)}
-                          className="block px-4 py-2 text-sm text-gray-500 hover:text-emerald-600 transition-all"
+                          style={{
+                            display: 'block', padding: '8px 16px', fontSize: '14px',
+                            color: '#6b7280', textDecoration: 'none', transition: 'color 0.2s',
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.color = '#059669'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.color = '#6b7280'; }}
                         >
                           {child.name}
                         </Link>

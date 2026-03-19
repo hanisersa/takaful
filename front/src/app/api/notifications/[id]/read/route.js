@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { getAuthUser, unauthorized } from '@/lib/apiAuth';
 import { markNotificationRead } from '@/models/Notification';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // PATCH /api/notifications/:id/read — mark a single notification as read
 export async function PATCH(request, { params }) {
   try {

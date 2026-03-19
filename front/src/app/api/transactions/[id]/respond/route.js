@@ -3,6 +3,9 @@ import { getAuthUser, unauthorized } from '@/lib/apiAuth';
 import { findTransactionById, updateTransaction } from '@/models/Transaction';
 import { createNotification } from '@/models/Notification';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // PATCH /api/transactions/:id/respond — provider accepts or refuses a request
 export async function PATCH(request, { params }) {
   try {

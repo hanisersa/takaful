@@ -43,6 +43,12 @@ export default function NotificationsPage() {
         const notifData = await notifRes.json();
         const txData = await txRes.json();
 
+        // Mark all notifications as read when viewing this page
+        await fetch('/api/notifications', {
+          method: 'PATCH',
+          headers: { 'Authorization': `Bearer ${token}` },
+        });
+
         // Build notification items from ALL transactions (both provider and requester)
         const txNotifs = (txData.transactions || [])
           .map(t => ({

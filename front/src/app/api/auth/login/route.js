@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import { findUser, comparePassword, safeUser } from '@/models/User';
 import { signToken } from '@/lib/auth';
 
+// Force Node.js runtime (required for mongoose/bcryptjs on Vercel)
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -44,9 +48,14 @@ export async function POST(request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Login error:', error);
+    console.error('Login error:', error?.message, error?.stack);
+    const message = error?.message?.includes('ECONNREFUSED') || error?.message?.includes('MongoServerSelectionError')
+      ? 'Database connection failed. Please try again in a moment.'
+      : error?.message?.includes('querySrv')
+      ? 'DNS resolution failed for database. Check your connection string.'
+      : 'Something went wrong. Please try again.';
     return NextResponse.json(
-      { error: 'Something went wrong. Please try again.' },
+      { error: message },
       { status: 500 }
     );
   }

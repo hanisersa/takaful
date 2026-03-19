@@ -28,11 +28,11 @@ export default function Footer() {
       {/* Palestine stripe */}
       <div className="palestine-stripe" />
 
-      <div className="container-custom" style={{ padding: '72px 0' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '48px' }}>
+      <div className="container-custom" style={{ paddingTop: '72px', paddingBottom: '72px' }}>
+        <div className="grid-footer">
           {/* Brand */}
           <div>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', textDecoration: 'none' }}>
+            <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', textDecoration: 'none' }}>
               <div className="gradient-primary" style={{ width: '40px', height: '40px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Heart className="w-5 h-5" style={{ color: 'white' }} fill="white" />
               </div>
@@ -91,7 +91,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{ borderTop: '1px solid #1f2937' }}>
-        <div className="container-custom" style={{ padding: '24px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="container-custom bottom-bar" style={{ paddingTop: '24px', paddingBottom: '24px' }}>
           <p style={{ fontSize: '14px', color: '#6b7280' }}>
             © 2026 Takaful. Built with ❤️ for Palestine.
           </p>

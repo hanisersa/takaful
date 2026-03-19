@@ -4,6 +4,9 @@ import { createTransaction, findTransactionsByUser, findExistingTransaction } fr
 import { findServiceById } from '@/models/Service';
 import { createNotification } from '@/models/Notification';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 // GET /api/transactions — get current user's transactions
 export async function GET(request) {
   try {

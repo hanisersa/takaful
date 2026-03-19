@@ -172,7 +172,7 @@ export default function OfferServicePage() {
 
                 <div>
                   <label style={{ fontSize: '12px', fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: '10px' }}>Category*</label>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
+                  <div className="grid-cols-3-responsive" style={{ gap: '8px' }}>
                     {categories.map((cat) => (
                       <button key={cat.name} type="button"
                         onClick={() => setForm({ ...form, category: cat.name, points: categoryPoints[cat.name] ?? 20 })}

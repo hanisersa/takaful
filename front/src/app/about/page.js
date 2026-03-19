@@ -31,7 +31,7 @@ export default function AboutPage() {
       {/* ===================== MISSION ===================== */}
       <section style={{ padding: '80px 0', background: 'white' }}>
         <div className="container-custom">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+          <div className="grid-cols-2-responsive" style={{ gap: '64px', alignItems: 'center' }}>
             <div>
               <span className="section-label">Our Mission</span>
               <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800, color: '#111827', marginTop: '12px', marginBottom: '16px' }}>
@@ -49,7 +49,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div className="grid-cols-2-responsive" style={{ gap: '16px' }}>
               {[
                 { icon: Users, value: 5200, suffix: '+', label: 'Active Members', color: '#059669', bg: '#ecfdf5' },
                 { icon: Heart, value: 12800, suffix: '+', label: 'Services Exchanged', color: '#dc2626', bg: '#fef2f2' },
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          <div className="grid-cols-3-responsive" style={{ gap: '24px' }}>
             {[
               {
                 icon: HandHeart,
@@ -128,7 +128,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
+          <div className="grid-cols-4-responsive" style={{ gap: '16px' }}>
             {[
               { step: '1', title: 'Sign Up', desc: 'Create your account and list your skills', color: '#059669' },
               { step: '2', title: 'Help Others', desc: 'Provide services to community members who need your skills', color: '#d97706' },
