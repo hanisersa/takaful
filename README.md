@@ -1,1 +1,1 @@
-this was a hackathon where we give an idea of using points instead of many as a method to help our brothers in gaza
+A decentralized, points-based resource distribution system designed to provide efficient, dignified, and community-driven aid to our brothers and sisters in Gaza.By replacing cash with an ecosystem of utility points, this platform bypasses traditional financial roadblocks, prevents currency inflation, and ensures resources reach those who need them most.
